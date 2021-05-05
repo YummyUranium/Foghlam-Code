@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Roboto", sans-serif;
+    src: url();
+}
+
+.title {
+    font-family: "Roboto";
+    font-size: 72px;
+}
+
+.button {
+    font-family: "Roboto";
+    font-size: 36px;
+}
