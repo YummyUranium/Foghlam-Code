@@ -6,9 +6,23 @@
 .title {
     font-family: "Roboto";
     font-size: 72px;
+    text-align: center;
 }
 
 .button {
+    border: black;
+    color: white;
+    padding: 5px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: black;
     font-family: "Roboto";
-    font-size: 36px;
+    display: block;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 30%;
 }
