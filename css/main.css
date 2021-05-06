@@ -1,6 +1,7 @@
 @font-face {
     font-family: "Roboto", sans-serif;
-    src: url(https://fonts.googleapis.com/css2?family=Roboto&display=swap);
+    src: url(../assets/fonts/roboto-medium-webfont.woff2);
+    src: url(../assets/fonts/roboto-medium-webfont.eot) url(../assets/fonts/roboto-medium-webfont.ttf) url(../assets/fonts/roboto-medium-webfont.woff);
 }
 
 .title {
