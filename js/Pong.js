@@ -20,13 +20,14 @@ const net = {
     y: 0,
     width: netWidth,
     height: netHeight,
-
-}
+    color: "#FFF",
+    score: 0
+};
 
 // Draws black canvas
 function render() {
     // Sets the colour to fill
-    ctx.fillStyle = "000";
+    ctx.fillStyle = "#000";
 
     // Draws the black board
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.height);
