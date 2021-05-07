@@ -27,3 +27,8 @@
     margin-left: 40%;
     margin-right: 30%;
 }
+
+.button:hover {
+    background-color: grey;
+    color: black;
+}
