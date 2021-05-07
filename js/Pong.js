@@ -12,3 +12,5 @@ function render() {
     // Draws the black board
     ctx.fillRect(0, 0, canvas.clientWidth, canvas.height);
 }
+
+render()
