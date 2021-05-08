@@ -105,8 +105,13 @@ function render() {
     drawNet();
 
 
-    /*  The reason the scores are divided by four, and in the AI's case is then
-        multiplied is to quarter the screen up. */
+    /*  The reason the scores are divided by four,
+        and in the AI's case is then multiplied is
+        to quarter the screen up.
+        Furthermore, the height is divided by 6 in
+        order to divide the screen into sixths, so
+        the scores are displayed a sixth of the way
+        down from the top.  */
 
     // Draws user score
     drawScore(canvas.width / 4, canvas.height / 6, user.score);
