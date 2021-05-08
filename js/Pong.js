@@ -54,7 +54,7 @@ const ball = {
     speed: 7,
     velocityX: 5,
     velocityY: 5,
-    color: "05EDFF"
+    color: "#05EDFF"
 }
 
 
