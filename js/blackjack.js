@@ -91,6 +91,11 @@ var dealerHand = dealerCard1 + ", " + dealerCard2;
 
 // FUNCTIONS
 
+// Test for returning shorthand display
+function print(id) {
+    return document.getElementById(id).innerHTML;
+}
+
 // Function for getting a random element from an array
 function randArrayElem(arr) {
     return Math.floor(Math.random() * arr.length);
@@ -102,6 +107,6 @@ function checkUserHand() {
 
 // BUILDING THE GAME
 
-console.log("Welcome to Blackjack!");
+print(display) = "Welcome to Blackjack!";
 console.log("The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ".");
 var input = prompt("Input 1 to hit, 2 to stick, 3 to check your hand and 4 to check dealer's card:");
