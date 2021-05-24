@@ -117,7 +117,6 @@ function randArrayElem(arr) {
 }
 
 // Function for making buttons when it's your turn
-// TODO: fix buttons
 function userTurn() {
     let hitButton = document.createElement("input");
     hitButton.innerHTML = "Hit";
@@ -152,17 +151,17 @@ function userStick() {
 }
 
 // Function for finding out user or dealer hand value
+// TODO: make this work
 function handValue(hand) {
 
     var valueArray = [hand.split(/, /)];
     var value;
 
-
     for (var m = 0; m < valueArray.length; m++) {
 
         var n = m;
 
-        if (valueArray[m] === 11 || 12 || 13) {
+        if (valueArray[m] == "11" || valueArray == "12" || valueArray == "13") {
             n = 10;
             return n;
         }
