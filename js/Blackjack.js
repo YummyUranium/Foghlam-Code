@@ -119,6 +119,7 @@ function randArrayElem(arr) {
 }
 
 // Function for making buttons when it's your turn
+// TODO: fix buttons
 function userTurn() {
     let hitButton = document.createElement("input");
     hitButton.innerHTML = "Hit";
