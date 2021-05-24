@@ -79,6 +79,7 @@ strDeck.pop();
 strDeck.shift();
 
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // VARIABLES
 
 // Creates users hand
@@ -91,11 +92,9 @@ var dealerCard1 = draw();
 var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
 
-// Variable for users hand value
-// TODO: actually make the bloody thing
-var userHandValue;
 
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // FUNCTIONS
 
 // Function for translating from int to str
@@ -151,14 +150,20 @@ function userStick() {
     return;
 }
 
+// Function for finding out user or dealer hand value
+function handValue(hand) {
+    return;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 // BUILDING THE GAME
-
 // Displayed at start of game
 print("welcome", "Welcome to Blackjack!");
 
 // Displayed first round
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + userHandValue + ".\nWhat do you do?");
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ", and the dealer's hand is " + handValue(dealerHand) + ".\nWhat do you do?" + userHand);
 
 // Creates buttons for user's turn
 userTurn();
