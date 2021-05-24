@@ -123,6 +123,7 @@ function userTurn() {
     hitButton.innerHTML = "Hit";
     hitButton.id = "hit-button";
     hitButton.type = "button";
+    hitButton.value = "Hit";
     hitButton.onclick = "userHit();";
     document.getElementById("display").appendChild(hitButton);
 
