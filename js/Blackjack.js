@@ -114,7 +114,11 @@ function userTurn() {
 
 // BUILDING THE GAME
 
+// Displayed at start of game
 print("welcome", "Welcome to Blackjack!");
+
+// Displayed first round
 print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ".\nWhat do you do?");
 
+// Creates buttons for user's turn
 userTurn();
