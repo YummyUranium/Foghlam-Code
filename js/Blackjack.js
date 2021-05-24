@@ -105,11 +105,11 @@ function randArrayElem(arr) {
 function userTurn() {
     let hitButton = document.createElement("button");
     hitButton.innerHTML = "Hit";
-    document.body.appendChild(hitButton);
+    document.getElementById("display").appendChild(hitButton);
 
     let stickButton = document.createElement("button");
     stickButton.innerHTML = "Stick";
-    document.body.appendChild(stickButton);
+    document.getElementById("display").appendChild(stickButton);
 }
 
 // BUILDING THE GAME
