@@ -152,6 +152,7 @@ function userStick() {
 // Function for finding out user or dealer hand value
 function handValue(hand) {
     var valueArray = hand.split(/,/);
+    var value;
     for (var m = 0; m < valueArray.length; m++) {
 
         var n = m;
@@ -161,10 +162,10 @@ function handValue(hand) {
             return n;
         }
 
-
+        value += n;
 
     }
-    return;
+    return value;
 }
 
 
