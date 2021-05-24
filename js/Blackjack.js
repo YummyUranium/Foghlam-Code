@@ -163,7 +163,7 @@ function handValue(hand) {
         }
 
         value += n;
-
+        return value;
     }
     return value;
 }
