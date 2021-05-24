@@ -80,16 +80,21 @@ deck.shift();
 // VARIABLES
 
 // Creates users hand
-var userCard1 = deck.splice(randArrayElem(deck), 1)[0];
-var userCard2 = deck.splice(randArrayElem(deck), 1)[0];
+var userCard1 = draw();
+var userCard2 = draw();
 var userHand = userCard1 + ", " + userCard2;
 
 // Creates dealers hand
-var dealerCard1 = deck.splice(randArrayElem(deck), 1)[0];
-var dealerCard2 = deck.splice(randArrayElem(deck), 1)[0];
+var dealerCard1 = draw();
+var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
 
 // FUNCTIONS
+
+// Function for drawing cards
+function draw() {
+    return deck.splice(randArrayElem(deck), 1)[0];
+}
 
 // Print to <p> with id being id of html element you want to print to
 function print(id, str) {
@@ -111,6 +116,13 @@ function userTurn() {
     stickButton.innerHTML = "Stick";
     document.getElementById("display").appendChild(stickButton);
 }
+
+// Function for Hitting
+function userHit() {
+    let userCard3 = draw();
+    userHand = userHand + " and " + userCard3;
+}
+
 
 // BUILDING THE GAME
 
