@@ -157,8 +157,7 @@ function userStick() {
 print("welcome", "Welcome to Blackjack!");
 
 // Displayed first round
-// TODO: make cards show str instead of int
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ". The value of your hand is " + userHandValue + ".\nWhat do you do?");
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + userHandValue + ".\nWhat do you do?");
 
 // Creates buttons for user's turn
 userTurn();
