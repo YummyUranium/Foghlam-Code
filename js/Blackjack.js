@@ -130,6 +130,7 @@ function userTurn() {
     stickButton.innerHTML = "Stick";
     stickButton.id = "stick-button";
     stickButton.type = "button";
+    stickButton.value = "Stick";
     stickButton.onclick = "userStick();";
     stickButton.innerHTML = "Stick";
 
@@ -152,7 +153,7 @@ function userStick() {
 // Function for finding out user or dealer hand value
 function handValue(hand) {
 
-    var valueArray = [hand.split(/,/)];
+    var valueArray = [hand.split(/, /)];
     var value;
 
 
@@ -184,3 +185,4 @@ print("display", "The dealer shuffles the deck and deals two cards to you. Your 
 
 // Creates buttons for user's turn
 userTurn();
+console.log(handValue(userHand));
