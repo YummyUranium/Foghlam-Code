@@ -5,7 +5,7 @@ var intDeck = [];
 var strDeck = [];
 
 // Adds 52 numbers to both deck arrays, renames strDeck numbers to strings
-for (var i = 1; i < 53; i++) {
+for (var i = 1; i <= 52; i++) {
 
     intDeck.push(i);
 
@@ -73,8 +73,7 @@ for (var i = 1; i < 53; i++) {
 
 }
 
-// Fix for weird elements at start and finish,
-// no it's not professional, but it works.
+// fix for extra elements
 strDeck.pop();
 strDeck.shift();
 
@@ -152,6 +151,19 @@ function userStick() {
 
 // Function for finding out user or dealer hand value
 function handValue(hand) {
+    var valueArray = hand.split(/,/);
+    for (var m = 0; m < valueArray.length; m++) {
+
+        var n = m;
+
+        if (valueArray(m) === 11 || 12 || 13) {
+            n = 10;
+            return n;
+        }
+
+
+
+    }
     return;
 }
 
