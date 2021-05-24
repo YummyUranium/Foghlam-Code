@@ -92,10 +92,16 @@ var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
 
 // Variable for users hand value
+// TODO: actually make the bloody thing
 var userHandValue;
 
 
 // FUNCTIONS
+
+// Function for translating from int to str
+function translate(card) {
+    return strDeck[card - 1];
+}
 
 // Function for drawing cards
 function draw() {
@@ -114,12 +120,20 @@ function randArrayElem(arr) {
 
 // Function for making buttons when it's your turn
 function userTurn() {
-    let hitButton = document.createElement("button");
+    let hitButton = document.createElement("input");
     hitButton.innerHTML = "Hit";
+    hitButton.id = "hit-button";
+    hitButton.type = "button";
+    hitButton.onclick = "userHit();";
     document.getElementById("display").appendChild(hitButton);
 
-    let stickButton = document.createElement("button");
+    let stickButton = document.createElement("input");
     stickButton.innerHTML = "Stick";
+    stickButton.id = "stick-button";
+    stickButton.type = "button";
+    stickButton.onclick = "userStick();";
+    stickButton.innerHTML = "Stick";
+
     document.getElementById("display").appendChild(stickButton);
 }
 
@@ -130,6 +144,12 @@ function userHit() {
     print("display", "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
 }
 
+// Function for Sticking
+function userStick() {
+    // TODO: make sticking do something
+    return;
+}
+
 
 // BUILDING THE GAME
 
@@ -137,7 +157,8 @@ function userHit() {
 print("welcome", "Welcome to Blackjack!");
 
 // Displayed first round
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ". The value of your hand is " + userHandValue + ".\nWhat do you do?");
+// TODO: make cards show str instead of int
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ". The value of your hand is " + userHandValue + ".\nWhat do you do?");
 
 // Creates buttons for user's turn
 userTurn();
