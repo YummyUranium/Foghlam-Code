@@ -91,7 +91,7 @@ var dealerHand = dealerCard1 + ", " + dealerCard2;
 
 // FUNCTIONS
 
-// Test for returning shorthand display
+// Print to <p> with id being id of html element you want to print to
 function print(id, str) {
     document.getElementById(id).innerHTML = str;
 }
@@ -101,12 +101,20 @@ function randArrayElem(arr) {
     return Math.floor(Math.random() * arr.length);
 }
 
-// Function to display to user their hand
-function checkUserHand() {
-    print("display", "Your hand is: " + userHand + ".");
+// Function for making buttons when it's your turn
+function userTurn() {
+    let hitButton = document.createElement("button");
+    hitButton.innerHTML = "Hit";
+    document.body.appendChild(hitButton);
+
+    let stickButton = document.createElement("button");
+    stickButton.innerHTML = "Stick";
+    document.body.appendChild(stickButton);
 }
 
 // BUILDING THE GAME
 
 print("welcome", "Welcome to Blackjack!");
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ".");
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ".\nWhat do you do?");
+
+userTurn();
