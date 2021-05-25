@@ -105,6 +105,7 @@ var userCardsDrawn = 2;
 var dealerCard1 = draw();
 var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
+var dealerCardsDrawn = 2;
 
 // Var for updating each appended display num
 var displayCount = 1;
@@ -179,35 +180,48 @@ function createDisplayElement(displayType, innerHTML, id, type, value, onclick) 
 }
 
 // Returns array of user's hand
-function returnUserHand() {
-    var userHandValArr = [];
+function returnHand(hand) {
 
-    for (var a = 0; a <= userCardsDrawn.length; a++) {
-        userHandValArr += userHand.split(", ");
+    if (hand === userHand) {
+        var userHandValArr = [];
+
+        for (var a = 0; a <= userCardsDrawn.length; a++) {
+            userHandValArr += userHand.split(", ");
+        }
+
+        return userHandValArr;
+
+    } else if (hand === dealerHand) {
+        var dealerHandValArr = [];
+
+        for (var b = 0; b <= dealerCardsDrawn.length; b++) {
+            dealerHandValArr += dealerHand.split(", ");
+        }
+
+        return dealerHandValArr;
+    } else {
+        return "Error: hand wasn't input correctly";
     }
+
+
 }
 
 // Function for finding out user or dealer hand value
-// TODO: make this work
 function handValue(hand) {
 
-    var valueArray = [hand.split(/, /)];
-    var value;
-
-    for (var m = 0; m < valueArray.length; m++) {
-
-        var n = m;
-
-        if (valueArray[m] == "11" || valueArray[m] == "12" || valueArray[m] == "13") {
-            n = 10;
-            return n;
-        }
-
-        value += n;
+    if (hand === userHand) {
+        var locUserHand = returnHand(userHand);
+        return add(locUserHand);
+    } else if (hand === dealerHand) {
+        var locDealerHand = returnHand(dealerHand);
+        return add(locDealerHand);
     }
 
-    return value;
+}
 
+// Adds all the elements of an array together
+function add(arr) {
+    return arr.reduce((a, b) => a + b, 0)
 }
 
 
