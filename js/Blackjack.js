@@ -141,7 +141,7 @@ function userTurn() {
 function userHit() {
     let userCard3 = draw();
     userHand = userHand + " and " + userCard3;
-    print("display", "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
+    return print("display", "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
 }
 
 // Function for Sticking
