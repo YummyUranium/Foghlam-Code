@@ -155,7 +155,7 @@ function createButtons() {
 function userHit() {
     let userCard3 = draw();
     userHand = userHand + " and " + userCard3;
-    return print(createDisplayElement(), "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
+    return print(createDisplayElement("p", "userHit", "user-hit", "display" + displayCount), "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
 }
 
 // Function for Sticking
@@ -171,7 +171,9 @@ function createDisplayElement(displayType, innerHTML, id, type, value, onclick) 
     elementCreated.type = type;
     elementCreated.value = value;
     elementCreated.onclick = onclick;
+    document.getElementById("display" + displayCount).appendChild(elementCreated);
     displayCount++;
+    return elementCreated;
 }
 
 // Function for finding out user or dealer hand value
