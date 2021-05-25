@@ -123,7 +123,7 @@ function userTurn() {
     hitButton.id = "hit-button";
     hitButton.type = "button";
     hitButton.value = "Hit";
-    hitButton.onclick = "userHit();";
+    hitButton.onclick = userHit();
     document.getElementById("display").appendChild(hitButton);
 
     let stickButton = document.createElement("input");
@@ -131,7 +131,7 @@ function userTurn() {
     stickButton.id = "stick-button";
     stickButton.type = "button";
     stickButton.value = "Stick";
-    stickButton.onclick = "userStick();";
+    stickButton.onclick = userStick();
     stickButton.innerHTML = "Stick";
 
     document.getElementById("display").appendChild(stickButton);
