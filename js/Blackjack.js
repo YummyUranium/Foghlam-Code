@@ -182,7 +182,8 @@ function createDisplayElement(displayType, innerHTML, id, type, value, onclick) 
 function returnUserHand() {
     var userHandValArr = [];
 
-    for (var a = 0; a <= userCardsDrawn.length; a++) {;
+    for (var a = 0; a <= userCardsDrawn.length; a++) {
+        userHandValArr += userHand.split(", ");
     }
 }
 
