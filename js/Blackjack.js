@@ -87,8 +87,6 @@ for (var i = 1; i <= 52; i++) {
 
 }
 
-console.log(intDeck);
-
 // fix for extra elements
 strDeck.pop();
 strDeck.shift();
@@ -107,6 +105,8 @@ var dealerCard1 = draw();
 var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
 
+// Var for updating each appended display num
+var displayCount = 1;
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -133,7 +133,7 @@ function randArrayElem(arr) {
 }
 
 // Function for making buttons when it's your turn
-function userTurn() {
+function createButtons() {
     let hitButton = document.createElement("input");
     hitButton.innerHTML = "Hit";
     hitButton.id = "hit-button";
@@ -148,8 +148,6 @@ function userTurn() {
     stickButton.type = "button";
     stickButton.value = "Stick";
     stickButton.onclick = userStick();
-    stickButton.innerHTML = "Stick";
-
     document.getElementById("display").appendChild(stickButton);
 }
 
@@ -157,12 +155,23 @@ function userTurn() {
 function userHit() {
     let userCard3 = draw();
     userHand = userHand + " and " + userCard3;
-    return print("display", "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
+    return print(createDisplayElement(), "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
 }
 
 // Function for Sticking
 function userStick() {
     return false;
+}
+
+// Creates elements in html
+function createDisplayElement(displayType, innerHTML, id, type, value, onclick) {
+    let elementCreated = document.createElement(displayType);
+    elementCreated.innerHTML = innerHTML;
+    elementCreated.id = id;
+    elementCreated.type = type;
+    elementCreated.value = value;
+    elementCreated.onclick = onclick;
+    displayCount++;
 }
 
 // Function for finding out user or dealer hand value
@@ -199,5 +208,4 @@ print("welcome", "Welcome to Blackjack!");
 print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ", and the dealer's hand is " + handValue(dealerHand) + ".\nWhat do you do?" + userHand);
 
 // Creates buttons for user's turn
-userTurn();
-console.log(handValue(userHand));
+createButtons();
