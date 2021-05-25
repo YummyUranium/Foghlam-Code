@@ -210,11 +210,13 @@ function returnHand(hand) {
 function handValue(hand) {
 
     if (hand === userHand) {
-        var locUserHand = returnHand(userHand);
-        return add(locUserHand);
+        var locUserHand = new Array();
+        locUserHand() = returnHand(userHand);
+        return add(locUserHand());
     } else if (hand === dealerHand) {
-        var locDealerHand = returnHand(dealerHand);
-        return add(locDealerHand);
+        var locDealerHand = new Array();
+        locDealerHand() = returnHand(dealerHand);
+        return add(locDealerHand());
     }
 
 }
