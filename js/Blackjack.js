@@ -4,10 +4,10 @@
 var intDeck = [];
 var strDeck = [];
 
-// Adds 52 numbers to both deck arrays, renames strDeck numbers to strings
+// Adds 52 numbers to strDeck deck array, renames strDeck numbers to strings
 for (var i = 1; i <= 52; i++) {
 
-    intDeck.push(i);
+    // Adding the strDeck values
 
     // Adds "Hearts" after the first 13 numbers
     if (i < 14) {
@@ -71,7 +71,23 @@ for (var i = 1; i <= 52; i++) {
 
     strDeck.push(i);
 
+    // Adding the intDeck values
+
+    if (i <= 10) {
+        intDeck.push(i);
+    } else if (i === 11 || i === 12 || i === 13 || i === 24 || i === 25 || i === 26 || i === 37 || i === 38 || i === 39 || i === 50 || i === 51 || i === 52) {
+        intDeck.push(10);
+    } else if (i > 13 && i <= 23) {
+        intDeck.push(i - 13);
+    } else if (i > 26 && i <= 36) {
+        intDeck.push(i - 26);
+    } else {
+        intDeck.push(i - 39);
+    }
+
 }
+
+console.log(intDeck);
 
 // fix for extra elements
 strDeck.pop();
@@ -146,8 +162,7 @@ function userHit() {
 
 // Function for Sticking
 function userStick() {
-    // TODO: make sticking do something
-    return;
+    return false;
 }
 
 // Function for finding out user or dealer hand value
@@ -161,7 +176,7 @@ function handValue(hand) {
 
         var n = m;
 
-        if (valueArray[m] == "11" || valueArray == "12" || valueArray == "13") {
+        if (valueArray[m] == "11" || valueArray[m] == "12" || valueArray[m] == "13") {
             n = 10;
             return n;
         }
