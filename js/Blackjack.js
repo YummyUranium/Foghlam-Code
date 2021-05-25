@@ -99,6 +99,7 @@ strDeck.shift();
 var userCard1 = draw();
 var userCard2 = draw();
 var userHand = userCard1 + ", " + userCard2;
+var userCardsDrawn = 2;
 
 // Creates dealers hand
 var dealerCard1 = draw();
@@ -153,9 +154,10 @@ function createButtons() {
 
 // Function for Hitting
 function userHit() {
-    let userCard3 = draw();
-    userHand = userHand + " and " + userCard3;
-    return print(createDisplayElement("p", "userHit", "user-hit", "display" + displayCount), "You drew: " + userCard3 + ". Your hand is " + userHand + ". Value: ")
+    let userCardDrawn = draw();
+    userHand = userHand + " and " + userCardDrawn;
+    userCardsDrawn++;
+    return print(createDisplayElement("p", "userHit", "user-hit", "display" + displayCount), "You drew: " + userCardDrawn + ". Your hand is " + userHand + ". Value: ")
 }
 
 // Function for Sticking
@@ -174,6 +176,14 @@ function createDisplayElement(displayType, innerHTML, id, type, value, onclick) 
     document.getElementById("display" + displayCount).appendChild(elementCreated);
     displayCount++;
     return elementCreated;
+}
+
+// Returns array of user's hand
+function returnUserHand() {
+    var userHandValArr = [];
+
+    for (var a = 0; a <= userCardsDrawn.length; a++) {;
+    }
 }
 
 // Function for finding out user or dealer hand value
