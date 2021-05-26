@@ -134,25 +134,6 @@ function randArrayElem(arr) {
     return Math.floor(Math.random() * arr.length);
 }
 
-// Function for making buttons when it's your turn
-function createButtons() {
-    let hitButton = document.createElement("input");
-    hitButton.innerHTML = "Hit";
-    hitButton.id = "hit-button";
-    hitButton.type = "button";
-    hitButton.value = "Hit";
-    hitButton.onclick = userHit();
-    document.getElementById("display").appendChild(hitButton);
-
-    let stickButton = document.createElement("input");
-    stickButton.innerHTML = "Stick";
-    stickButton.id = "stick-button";
-    stickButton.type = "button";
-    stickButton.value = "Stick";
-    stickButton.onclick = userStick();
-    document.getElementById("display").appendChild(stickButton);
-}
-
 // Function for Hitting
 function userHit() {
     let userCardDrawn = draw();
@@ -165,46 +146,6 @@ function userHit() {
 function userStick() {
     return false;
 }
-
-// Creates elements in html
-function createDisplayElement(displayType, innerHTML, id, type, value, onclick) {
-    let elementCreated = document.createElement(displayType);
-    elementCreated.innerHTML = innerHTML;
-    elementCreated.id = id;
-    elementCreated.type = type;
-    elementCreated.value = value;
-    elementCreated.onclick = onclick;
-    document.getElementById("display" + displayCount).appendChild(elementCreated);
-    displayCount++;
-    return elementCreated;
-}
-
-// Returns array of user's hand
-//          function returnHand(hand) {
-//          
-//              if (hand === userHand) {
-//                  var userHandValArr = [];
-//          
-//                  for (var a = 0; a <= userCardsDrawn.length; a++) {
-//                      userHandValArr += userHand.split(", ");
-//                  }
-//          
-//                  return userHandValArr;
-//          
-//              } else if (hand === dealerHand) {
-//                  var dealerHandValArr = [];
-//          
-//                  for (var b = 0; b <= dealerCardsDrawn.length; b++) {
-//                      dealerHandValArr += dealerHand.split(", ");
-//                  }
-//          
-//                  return dealerHandValArr;
-//              } else {
-//                  return "Error: hand wasn't input correctly";
-//              }
-//          
-//          
-//          }
 
 // Function for finding out user or dealer hand value
 function handValue(hand) {
