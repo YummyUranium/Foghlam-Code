@@ -180,43 +180,41 @@ function createDisplayElement(displayType, innerHTML, id, type, value, onclick) 
 }
 
 // Returns array of user's hand
-function returnHand(hand) {
-
-    if (hand === userHand) {
-        var userHandValArr = [];
-
-        for (var a = 0; a <= userCardsDrawn.length; a++) {
-            userHandValArr += userHand.split(", ");
-        }
-
-        return userHandValArr;
-
-    } else if (hand === dealerHand) {
-        var dealerHandValArr = [];
-
-        for (var b = 0; b <= dealerCardsDrawn.length; b++) {
-            dealerHandValArr += dealerHand.split(", ");
-        }
-
-        return dealerHandValArr;
-    } else {
-        return "Error: hand wasn't input correctly";
-    }
-
-
-}
+//          function returnHand(hand) {
+//          
+//              if (hand === userHand) {
+//                  var userHandValArr = [];
+//          
+//                  for (var a = 0; a <= userCardsDrawn.length; a++) {
+//                      userHandValArr += userHand.split(", ");
+//                  }
+//          
+//                  return userHandValArr;
+//          
+//              } else if (hand === dealerHand) {
+//                  var dealerHandValArr = [];
+//          
+//                  for (var b = 0; b <= dealerCardsDrawn.length; b++) {
+//                      dealerHandValArr += dealerHand.split(", ");
+//                  }
+//          
+//                  return dealerHandValArr;
+//              } else {
+//                  return "Error: hand wasn't input correctly";
+//              }
+//          
+//          
+//          }
 
 // Function for finding out user or dealer hand value
 function handValue(hand) {
 
     if (hand === userHand) {
-        var locUserHand = new Array();
-        locUserHand() = returnHand(userHand);
-        return add(locUserHand());
+        const locUserHand = userHand.split `, `.map(x => +x);
+        return add(locUserHand);
     } else if (hand === dealerHand) {
-        var locDealerHand = new Array();
-        locDealerHand() = returnHand(dealerHand);
-        return add(locDealerHand());
+        const locDealerHand = dealerHand.split `, `.map(x => +x);
+        return add(locDealerHand);
     } else {
         return console.log("Error: Reading hand value failed.");
     }
@@ -225,7 +223,7 @@ function handValue(hand) {
 
 // Adds all the elements of an array together
 function add(arr) {
-    return arr.reduce((a, b) => a + b, 0)
+    return arr.reduce((a, b) => a + b, 0);
 }
 
 
