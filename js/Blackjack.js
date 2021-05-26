@@ -217,6 +217,8 @@ function handValue(hand) {
         var locDealerHand = new Array();
         locDealerHand() = returnHand(dealerHand);
         return add(locDealerHand());
+    } else {
+        return console.log("Error: Reading hand value failed.");
     }
 
 }
