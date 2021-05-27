@@ -202,6 +202,6 @@ function add(arr) {
 print("welcome", "Welcome to Blackjack!");
 
 // Displayed first round
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ", and the dealer's hand is " + handValue(dealerHand) + ".\nWhat do you do?" + userHand);
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ".\nWhat do you do? " + userHand);
 
 //
