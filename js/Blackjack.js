@@ -115,16 +115,19 @@ var dealerCardsDrawn = 2;
 // FUNCTIONS
 
 // Function for translating from int to str
+// TODO: make sure this works
 function translate(card) {
-    console.log(strDeck[card]);
-    return strDeck[card - 1];
+
+    // Takes the index of strDeck card and translates it to intDeck
+    return intDeck[card - 1];
+
 }
 
 // Function for drawing cards
 function draw() {
 
     // Declares card drawn
-    let newCard = intDeck.slice(randArrayElem(intDeck))[0];
+    let newCard = strDeck.slice(randArrayElem(strDeck))[0];
 
     // Making sure the variable has a boolean value, also
     // removes the need to declare it as true in a later statement
@@ -147,6 +150,7 @@ function draw() {
     // checked later
     cardsDrawn.push(newCard);
 
+    // Bugtesting
     console.log(newCard);
 
     // Finally, returns the card drawn
@@ -205,6 +209,6 @@ function add(arr) {
 print("welcome", "Welcome to Blackjack!");
 
 // Displayed first round
-print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ".\nWhat do you do? " + userHand);
+print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + userCard1 + " and " + userCard2 + ". The dealer deals two cards to themselves, one of which is shown to you: " + dealerCard1 + ". The value of your hand is " + handValue(userHand) + ".\nWhat do you do? " + userHand);
 
 //
