@@ -185,12 +185,13 @@ function handValue(hand) {
         let locUserHand = [];
         var userHandCharArr = userHand.split("");
         locUserHand = userHandCharArr.map(x => +x);
-        console.log(locUserHand);
+        locUserHand.filter(Boolean);
         return add(locUserHand);
     } else if (hand === dealerHand) {
         let locDealerHand = [];
         var dealerHandCharArr = dealerHand.split("");
         locDealerHand = dealerHandCharArr.map(x => +x);
+        locDealerHand.filter(Boolean);
         return add(locDealerHand);
     } else {
         return console.log("Error: Reading hand value failed.");
