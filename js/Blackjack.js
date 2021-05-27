@@ -150,9 +150,6 @@ function draw() {
     // checked later
     cardsDrawn.push(newCard);
 
-    // Bugtesting
-    console.log(newCard);
-
     // Finally, returns the card drawn
     return newCard;
 
@@ -185,10 +182,15 @@ function userStick() {
 function handValue(hand) {
 
     if (hand === userHand) {
-        const locUserHand = userHand.split `, `.map(x => +x);
+        let locUserHand = [];
+        var userHandCharArr = userHand.split("");
+        locUserHand = userHandCharArr.map(x => +x);
+        console.log(locUserHand);
         return add(locUserHand);
     } else if (hand === dealerHand) {
-        const locDealerHand = dealerHand.split `, `.map(x => +x);
+        let locDealerHand = [];
+        var dealerHandCharArr = dealerHand.split("");
+        locDealerHand = dealerHandCharArr.map(x => +x);
         return add(locDealerHand);
     } else {
         return console.log("Error: Reading hand value failed.");
