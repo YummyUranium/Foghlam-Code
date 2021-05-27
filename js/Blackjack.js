@@ -123,7 +123,7 @@ function translate(card) {
 function draw() {
 
     // Declares card drawn
-    let newCard = intDeck.slice(randArrayElem(intDeck), 1)[0];
+    let newCard = intDeck.slice(randArrayElem(intDeck))[0];
 
     // Making sure the variable has a boolean value, also
     // removes the need to declare it as true in a later statement
@@ -145,6 +145,8 @@ function draw() {
     // Adds the card drawn to the cardsDrawn array so it can be
     // checked later
     cardsDrawn.push(newCard);
+
+    console.log(newCard);
 
     // Finally, returns the card drawn
     return newCard;
