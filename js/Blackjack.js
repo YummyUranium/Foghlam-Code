@@ -95,6 +95,9 @@ strDeck.shift();
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // VARIABLES
 
+// Stores all cards drawn
+var cardsDrawn = [];
+
 // Creates users hand
 var userCard1 = draw();
 var userCard2 = draw();
@@ -107,9 +110,6 @@ var dealerCard2 = draw();
 var dealerHand = dealerCard1 + ", " + dealerCard2;
 var dealerCardsDrawn = 2;
 
-// Var for updating each appended display num
-var displayCount = 1;
-
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // FUNCTIONS
@@ -121,7 +121,34 @@ function translate(card) {
 
 // Function for drawing cards
 function draw() {
-    return intDeck.splice(randArrayElem(intDeck), 1)[0];
+
+    // Declares card drawn
+    let newCard = intDeck.slice(randArrayElem(intDeck), 1)[0];
+
+    // Making sure the variable has a boolean value, also
+    // removes the need to declare it as true in a later statement
+    let newCardIsUnique = true;
+
+    // Checks if the card drawn is unique
+    for (var c of cardsDrawn) {
+        if (cardsDrawn[c] == newCard) {
+            newCardIsUnique = false;
+            return newCardIsUnique;
+        }
+    }
+
+    // Checks if the card drawn is unique and therefore playable
+    if (!newCardIsUnique) {
+        draw();
+    }
+
+    // Adds the card drawn to the cardsDrawn array so it can be
+    // checked later
+    cardsDrawn.push(newCard);
+
+    // Finally, returns the card drawn
+    return newCard;
+
 }
 
 // Print to <p> with id being id of html element you want to print to
@@ -177,5 +204,4 @@ print("welcome", "Welcome to Blackjack!");
 // Displayed first round
 print("display", "The dealer shuffles the deck and deals two cards to you. Your cards are: " + translate(userCard1) + " and " + translate(userCard2) + ". The dealer deals two cards to themselves, one of which is shown to you: " + translate(dealerCard1) + ". The value of your hand is " + handValue(userHand) + ", and the dealer's hand is " + handValue(dealerHand) + ".\nWhat do you do?" + userHand);
 
-// Creates buttons for user's turn
-createButtons();
+//
