@@ -189,24 +189,24 @@ function handValue(hand) {
         // Filters all falsy values
 
         console.log(userHandCharArr);
-        userHandCharArr.filter(Boolean);
-        console.log(userHandCharArr);
+        var filteredUserHand = userHandCharArr.filter(Boolean);
+        console.log(filteredUserHand);
 
         // bugtesting
-        console.log(userHandCharArr);
+        console.log(filteredUserHand);
 
         // Adds all integers together hopefully
-        return add(userHandCharArr);
+        return add(filteredUserHand);
 
     } else if (hand === dealerHand) {
         // Creates array for all the characters in userHand
         var dealerHandCharArr = userHand.split("");
 
         // Filters all falsy values
-        var dealerResult = dealerHandCharArr.filter(Boolean);
+        var filteredDealerHand = dealerHandCharArr.filter(Boolean);
 
         // Adds all integers together hopefully
-        return add(dealerResult);
+        return add(filteredDealerHand);
 
     } else {
         return console.log("Error: Reading hand value failed.");
