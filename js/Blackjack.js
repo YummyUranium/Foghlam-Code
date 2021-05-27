@@ -116,6 +116,7 @@ var dealerCardsDrawn = 2;
 
 // Function for translating from int to str
 function translate(card) {
+    console.log(strDeck[card]);
     return strDeck[card - 1];
 }
 
