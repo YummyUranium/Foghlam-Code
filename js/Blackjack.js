@@ -168,9 +168,9 @@ function randArrayElem(arr) {
 // Function for Hitting
 function userHit() {
     let userCardDrawn = draw();
-    userHand = userHand + " and " + userCardDrawn;
+    userHand = userHand + ", " + userCardDrawn;
     userCardsDrawn++;
-    return print(createDisplayElement("p", "userHit", "user-hit", "display" + displayCount), "You drew: " + userCardDrawn + ". Your hand is " + userHand + ". Value: ")
+    return print("display", "You drew: " + userCardDrawn + ". Hand value: " + handValue(userHand) + ".");
 }
 
 // Function for Sticking
