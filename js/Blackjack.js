@@ -186,14 +186,10 @@ function handValue(hand) {
         // Creates array for all the characters in userHand
         var userHandCharArr = userHand.split("");
 
-        // Filters all falsy values
-
-        console.log(userHandCharArr);
-        var filteredUserHand = userHandCharArr.filter(Boolean);
-        console.log(filteredUserHand);
-
-        // bugtesting
-        console.log(filteredUserHand);
+        // Filters all non-integers and removes them
+        var filteredUserHand = userHandCharArr.map(function(value) {
+            return parseInt(value.replace(/\D/g, ''), 10);
+        });
 
         // Adds all integers together hopefully
         return add(filteredUserHand);
@@ -202,8 +198,10 @@ function handValue(hand) {
         // Creates array for all the characters in userHand
         var dealerHandCharArr = userHand.split("");
 
-        // Filters all falsy values
-        var filteredDealerHand = dealerHandCharArr.filter(Boolean);
+        // Filters all non-integers and removes them
+        var filteredDealerHand = dealerHandCharArr.map(function(value) {
+            return parseInt(value.replace(/\D/g, ''), 10);
+        });
 
         // Adds all integers together hopefully
         return add(filteredDealerHand);
