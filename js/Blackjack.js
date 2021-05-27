@@ -182,17 +182,32 @@ function userStick() {
 function handValue(hand) {
 
     if (hand === userHand) {
-        let locUserHand = [];
+
+        // Creates array for all the characters in userHand
         var userHandCharArr = userHand.split("");
-        locUserHand = userHandCharArr.map(x => +x);
-        locUserHand.filter(Boolean);
-        return add(locUserHand);
+
+        // Filters all falsy values
+
+        console.log(userHandCharArr);
+        userHandCharArr.filter(Boolean);
+        console.log(userHandCharArr);
+
+        // bugtesting
+        console.log(userHandCharArr);
+
+        // Adds all integers together hopefully
+        return add(userHandCharArr);
+
     } else if (hand === dealerHand) {
-        let locDealerHand = [];
-        var dealerHandCharArr = dealerHand.split("");
-        locDealerHand = dealerHandCharArr.map(x => +x);
-        locDealerHand.filter(Boolean);
-        return add(locDealerHand);
+        // Creates array for all the characters in userHand
+        var dealerHandCharArr = userHand.split("");
+
+        // Filters all falsy values
+        var dealerResult = dealerHandCharArr.filter(Boolean);
+
+        // Adds all integers together hopefully
+        return add(dealerResult);
+
     } else {
         return console.log("Error: Reading hand value failed.");
     }
