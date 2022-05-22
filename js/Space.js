@@ -1,5 +1,5 @@
-const input = document.getElementById("space-game-input");
-const gameText = document.getElementById("story-text");
+const input = document.getElementById("input-text");
+const output = document.getElementById("output-text");
 
 window.onload() = function() {
     input.focus();
@@ -41,4 +41,3 @@ function increaseTrait(trait, amount) {
     let trait = trait;
     trait += amount;
 }
-
